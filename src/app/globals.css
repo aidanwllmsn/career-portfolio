@@ -11,6 +11,9 @@
   :root {
     --background: #111111;
     --foreground: #ededed;
+    --buttonhover: #27272a;
+    --buttonactive: #007ea7;
+    --buttonactivehover: #026d91;
   }
 }
 
