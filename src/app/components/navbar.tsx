@@ -10,13 +10,13 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-background border-gray-200 my-1">
+    <nav className="bg-background border-gray-200">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4 relative">
         {/* Hamburger Button for Mobile */}
         <button
           onClick={toggleNavbar}
           type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-buttonhover focus:outline-none focus:ring-2 focus:ring-gray-200"
           aria-controls="navbar-cta"
           aria-expanded={isOpen}
         >
@@ -59,16 +59,24 @@ export default function Navbar() {
         {/* Navbar Links */}
         <div
           className={`${
-            isOpen ? "flex" : "hidden"
-          } items-center justify-between w-full md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:flex md:w-auto md:order-1 font-mono`}
+            isOpen ? " translate-y-0" : "-translate-y-96"
+          } md:hidden absolute left-0 top-full w-full font-mono bg-mainbackground border border-[#27272a] z-50 flex flex-col items-center py-4 space-y-2 rounded-md shadow-md transition-transform duration-300 ease-in-out`}
           id="navbar-cta"
         >
-          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-14 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 justify-center w-full">
+          <ul className="flex flex-col items-center font-medium">
+            <li>
+              <a
+                href="/"
+                className="block py-2 px-4 text-white hover:text-buttonactivehover rounded-lg"
+                aria-current="page"
+              >
+                Home
+              </a>
+            </li>
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded-sm md:bg-transparent md:hover:text-buttonactive"
-                aria-current="page"
+                className="block py-2 px-4 text-white hover:text-buttonactivehover rounded-lg"
               >
                 About
               </a>
@@ -76,15 +84,49 @@ export default function Navbar() {
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded-sm md:bg-transparent md:hover:text-buttonactive"
+                className="block py-2 px-4 text-white hover:text-buttonactivehover rounded-lg"
               >
-                Projects
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Static Navbar for md+ */}
+        <div
+          className="hidden items-center justify-between w-full md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:flex md:w-auto md:order-1 font-mono"
+          id="navbar-md"
+        >
+          <ul className="flex space-x-4 font-medium">
+            <li>
+              <a
+                href="/"
+                className="block py-2 px-4 text-white hover:text-buttonactive rounded-lg"
+                aria-current="page"
+              >
+                Home
               </a>
             </li>
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded-sm md:bg-transparent md:hover:text-buttonactive"
+                className="block py-2 px-4 text-white hover:text-buttonactive rounded-lg"
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="block py-2 px-4 text-white hover:text-buttonactive rounded-lg"
+              >
+                Services
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="block py-2 px-4 text-white hover:text-buttonactive rounded-lg"
               >
                 Contact
               </a>

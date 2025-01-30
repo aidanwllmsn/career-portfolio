@@ -9,6 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        mainbackground: 'var(--background)',
         buttonhover: 'var(--buttonhover)',
         buttonactive: 'var(--buttonactive)',
         buttonactivehover: 'var(--buttonactivehover)',  
