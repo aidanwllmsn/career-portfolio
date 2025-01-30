@@ -39,10 +39,11 @@ export default function Navbar() {
         </button>
 
         {/* Name Section */}
-        <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white font-mono">
-            Aidan Williamson
-          </span>
+        <a
+          href="/"
+          className="absolute left-1/2 transform -translate-x-1/2 text-2xl font-semibold whitespace-nowrap text-white font-mono md:static md:left-auto md:transform-none"
+        >
+          Aidan Williamson
         </a>
 
         {/* Resume Button */}
@@ -59,32 +60,32 @@ export default function Navbar() {
         {/* Navbar Links */}
         <div
           className={`${
-            isOpen ? " translate-y-0" : "-translate-y-96"
+            isOpen ? "translate-y-0" : "-translate-y-96"
           } md:hidden absolute left-0 top-full w-full font-mono bg-mainbackground border border-[#27272a] z-50 flex flex-col items-center py-4 space-y-2 rounded-md shadow-md transition-transform duration-300 ease-in-out`}
           id="navbar-cta"
         >
-          <ul className="flex flex-col items-center font-medium">
-            <li>
+          <ul className="flex flex-col items-center font-medium w-full">
+            <li className="w-full">
               <a
                 href="/"
-                className="block py-2 px-4 text-white hover:text-buttonactivehover rounded-lg"
+                className="block w-full py-2 px-4 text-center text-white hover:text-buttonactivehover rounded-lg"
                 aria-current="page"
               >
                 Home
               </a>
             </li>
-            <li>
+            <li className="w-full">
               <a
                 href="#"
-                className="block py-2 px-4 text-white hover:text-buttonactivehover rounded-lg"
+                className="block w-full py-2 px-4 text-center text-white hover:text-buttonactivehover rounded-lg"
               >
                 About
               </a>
             </li>
-            <li>
+            <li className="w-full">
               <a
                 href="#"
-                className="block py-2 px-4 text-white hover:text-buttonactivehover rounded-lg"
+                className="block w-full py-2 px-4 text-center text-white hover:text-buttonactivehover rounded-lg"
               >
                 Contact
               </a>
