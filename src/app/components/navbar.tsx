@@ -1,6 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import Box from "@mui/material/Box";
+import Drawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import { TypingAnimation } from "./magicui/typing-animation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,6 +15,38 @@ export default function Navbar() {
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
+
+  const list = () => (
+    <Box
+      sx={{
+        width: "auto",
+        bgcolor: "var(--background)", // Match your background color
+        boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)", // Match your shadow
+        fontFamily: "monospace",
+      }}
+      role="presentation"
+      onClick={toggleNavbar} // Close the drawer when an item is clicked
+      onKeyDown={toggleNavbar} // Close the drawer when a key is pressed
+    >
+      <List>
+        {["Home", "About", "Contact"].map((text) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton
+              sx={{
+                textAlign: "center",
+                color: "white",
+                "&:hover": {
+                  color: "var(--primary)",
+                },
+              }}
+            >
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
 
   return (
     <nav className="bg-background border-gray-200">
@@ -39,59 +78,42 @@ export default function Navbar() {
         </button>
 
         {/* Name Section */}
-        <a
-          href="/"
-          className="absolute left-1/2 transform -translate-x-1/2 text-2xl font-semibold whitespace-nowrap text-white font-mono md:static md:left-auto md:transform-none"
-        >
-          Aidan Williamson
+        <a href="/">
+          <TypingAnimation
+            className="top-5 absolute left-1/2 transform -translate-x-1/2 text-2xl font-semibold whitespace-nowrap text-white font-mono md:static md:left-auto md:transform-none"
+            duration={100}
+            delay={100}
+            startOnView={true}
+          >
+            Aidan Williamson
+          </TypingAnimation>
         </a>
 
         {/* Resume Button */}
-        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <div className="hidden md:flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <a
             href="resume.pdf"
             download="Williamson, Aidan Resume.pdf"
-            className="text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center bg-buttonactive hover:bg-buttonactivehover focus:ring-blue-800 font-mono"
+            className="text-white focus:ring-4 focus:outline-none text-xl font-semibold rounded-lg px-4 py-2 text-center hover:text-primary focus:ring-blue-800 font-mono"
           >
-            Resume
+            My Resume
           </a>
         </div>
 
-        {/* Navbar Links */}
-        <div
-          className={`${
-            isOpen ? "translate-y-0" : "-translate-y-96"
-          } md:hidden absolute left-0 top-full w-full font-mono bg-mainbackground border border-[#27272a] z-50 flex flex-col items-center py-4 space-y-2 rounded-md shadow-md transition-transform duration-300 ease-in-out`}
-          id="navbar-cta"
+        {/* Top Anchor for sm screens */}
+        <Drawer
+          anchor="top"
+          open={isOpen}
+          onClose={toggleNavbar}
+          sx={{
+            "& .MuiDrawer-paper": {
+              transition: "transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1)",
+              transform: isOpen ? "translateY(0)" : "translateY(-100%)",
+            },
+          }}
         >
-          <ul className="flex flex-col items-center font-medium w-full">
-            <li className="w-full">
-              <a
-                href="/"
-                className="block w-full py-2 px-4 text-center text-white hover:text-buttonactivehover rounded-lg"
-                aria-current="page"
-              >
-                Home
-              </a>
-            </li>
-            <li className="w-full">
-              <a
-                href="#"
-                className="block w-full py-2 px-4 text-center text-white hover:text-buttonactivehover rounded-lg"
-              >
-                About
-              </a>
-            </li>
-            <li className="w-full">
-              <a
-                href="#"
-                className="block w-full py-2 px-4 text-center text-white hover:text-buttonactivehover rounded-lg"
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
+          {list()}
+        </Drawer>
 
         {/* Static Navbar for md+ */}
         <div
@@ -102,7 +124,7 @@ export default function Navbar() {
             <li>
               <a
                 href="/"
-                className="block py-2 px-4 text-white hover:text-buttonactive rounded-lg"
+                className="block py-2 px-4 text-white hover:text-primary rounded-lg"
                 aria-current="page"
               >
                 Home
@@ -111,7 +133,7 @@ export default function Navbar() {
             <li>
               <a
                 href="#"
-                className="block py-2 px-4 text-white hover:text-buttonactive rounded-lg"
+                className="block py-2 px-4 text-white hover:text-primary rounded-lg"
               >
                 About
               </a>
@@ -119,15 +141,7 @@ export default function Navbar() {
             <li>
               <a
                 href="#"
-                className="block py-2 px-4 text-white hover:text-buttonactive rounded-lg"
-              >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-4 text-white hover:text-buttonactive rounded-lg"
+                className="block py-2 px-4 text-white hover:text-primary rounded-lg"
               >
                 Contact
               </a>

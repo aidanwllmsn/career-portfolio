@@ -13,6 +13,7 @@ const config: Config = {
         buttonhover: 'var(--buttonhover)',
         buttonactive: 'var(--buttonactive)',
         buttonactivehover: 'var(--buttonactivehover)',  
+        primary: 'var(--primary)'
       },
       fontFamily: {
         mono: ['Menlo', 'Consolas', 'Monaco', 'Liberation Mono', 'Lucida Console', 'monospace'],
