@@ -67,10 +67,10 @@ const BioCard = () => {
 
       {/* Description Box */}
       <div className="mb-5 text-white text-lg font-sans mt-4">
-        I'm a 23 year old Full-Stack Web Developer and Software Engineer. I
-        graduated from the University of California, Santa Cruz with a B.S in
-        Computer Engineering. I have been programming for 5+ years. I create
-        professional websites and software solutions.
+        I'm a Full-Stack Web Developer and Software Engineer. I graduated from
+        the University of California, Santa Cruz with a B.S in Computer
+        Engineering. I have been programming for 5+ years. I create professional
+        websites and software solutions.
       </div>
     </Box>
   );
