@@ -1,7 +1,8 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid2";
-import { DockDemo } from "./dock";
+import { DockDemo } from "./Dock";
+import DownloadIcon from "@mui/icons-material/Download";
 
 const BioCard = () => {
   return (
@@ -34,16 +35,16 @@ const BioCard = () => {
               flexDirection: "column",
               gap: 2,
               justifyContent: "center",
-              alignItems: { xs: "center", md: "flex-start" },
+              alignItems: { xs: "left", md: "flex-start" },
               paddingLeft: { xs: 0, md: 4 },
-              textAlign: { xs: "center", md: "left" },
+              textAlign: { xs: "left", md: "left" },
             }}
           >
             <h1 className="text-white text-4xl m-0 font-bold">
               Aidan Williamson
             </h1>
             <h1 className="text-gray-200 text-2xl m-0 font-medium">
-              Full-Stack Web Developer | Software Engineer
+              Software Engineer | Full-Stack Web Developer
             </h1>
             <div className="flex justify-start items-center text-gray-400">
               <div className="h-[20px] w-[20px] custom">
@@ -60,17 +61,29 @@ const BioCard = () => {
               </div>
               <span>Los Angeles, CA</span>
             </div>
-            <DockDemo />
+            <div className="flex items-center">
+              <DockDemo />
+              <div className="md:hidden items-center space-x-3 font-medium text-l rtl:space-x-reverse border border-[#27272a] p-3.5 mx-4 rounded-lg hover:bg-buttonhover">
+                <DownloadIcon />
+                <a
+                  href="resume.pdf"
+                  download="Williamson, Aidan Resume.pdf"
+                  className="text-white text-centerfont-mono"
+                >
+                  Resume
+                </a>
+              </div>
+            </div>
           </Box>
         </Grid>
       </Grid>
 
       {/* Description Box */}
       <div className="mb-5 text-white text-lg font-sans mt-4">
-        I'm a Full-Stack Web Developer and Software Engineer. I graduated from
-        the University of California, Santa Cruz with a B.S in Computer
-        Engineering. I have been programming for 5+ years. I create professional
-        websites and software solutions.
+        I'm a 23-year-old Full-Stack Web Developer and Software Engineer with
+        over five years of programming experience. I hold a B.S. in Computer
+        Engineering from the University of California, Santa Cruz and specialize
+        in developing professional websites and software solutions.
       </div>
     </Box>
   );

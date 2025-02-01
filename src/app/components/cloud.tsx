@@ -129,9 +129,9 @@ const Icons = {
   ),
 };
 
-export default function Skills() {
+export default function Cloud() {
   return (
-    <div className="relative flex size-full max-w-lg items-center justify-center overflow-hidden rounded-lg border bg-background">
+    <div className="relative flex size-full max-w-lg items-center justify-center overflow-hidden bg-background">
       <IconCloud
         icons={[
           <Icons.gitHub key="github" />,

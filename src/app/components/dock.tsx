@@ -63,7 +63,7 @@ export function DockDemo() {
     <div className="relative">
       <Dock direction="middle">
         {Object.entries(DATA.social).map(([name, social]) => (
-          <DockIcon key={name}>
+          <DockIcon key={name} className="hover:bg-buttonhover">
             <Link
               href={social.url}
               aria-label={social.name}
