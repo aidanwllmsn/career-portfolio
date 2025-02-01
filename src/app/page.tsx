@@ -1,19 +1,28 @@
-import Navbar from "./components/navbar";
+"use client";
+import { useEffect, useState } from "react";
+import NavBar from "./components/NavBar";
 import BioCard from "./components/BioCard";
+import Skills from "./components/Skills";
 
 export default function Home() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true); // This will trigger the fade-in
+  }, []);
+
   return (
     <div className="px-4 text-lg">
-      <Navbar />
+      <NavBar />
       <div className="max-w-[50rem] mx-auto mt-8">
-        {/* <div className="w-96 h-96 mx-auto mb-12 rounded-2xl overflow-hidden">
-          <img
-            src="Portrait.jpg"
-            alt="Picture of me"
-            className="w-full h-full object-cover"
-          />
-        </div> */}
-        <BioCard />
+        <div
+          className={`transition-opacity duration-1000 ${
+            isVisible ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <BioCard />
+          <Skills />
+        </div>
       </div>
     </div>
   );

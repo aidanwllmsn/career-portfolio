@@ -8,6 +8,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import { TypingAnimation } from "./magicui/typing-animation";
+import DownloadIcon from "@mui/icons-material/Download";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -83,20 +84,21 @@ export default function Navbar() {
             className="top-5 absolute left-1/2 transform -translate-x-1/2 text-2xl font-semibold whitespace-nowrap text-white font-mono md:static md:left-auto md:transform-none"
             duration={100}
             delay={100}
-            startOnView={true}
+            startOnView={false}
           >
             Aidan Williamson
           </TypingAnimation>
         </a>
 
         {/* Resume Button */}
-        <div className="hidden md:flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <div className="hidden md:flex md:order-2 items-center space-x-3 font-medium text-l rtl:space-x-reverse border border-[#27272a] px-2 py-2 rounded-lg hover:bg-buttonhover">
+          <DownloadIcon />
           <a
             href="resume.pdf"
             download="Williamson, Aidan Resume.pdf"
-            className="text-white focus:ring-4 focus:outline-none text-xl font-semibold rounded-lg px-4 py-2 text-center hover:text-primary focus:ring-blue-800 font-mono"
+            className="text-white text-centerfont-mono"
           >
-            My Resume
+            Resume
           </a>
         </div>
 
