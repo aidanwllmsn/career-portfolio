@@ -30,7 +30,7 @@ export default function Navbar() {
       onKeyDown={toggleNavbar} // Close the drawer when a key is pressed
     >
       <List>
-        {["Home", "About", "Contact"].map((text) => (
+        {["Home", "Projects", "Contact"].map((text) => (
           <ListItem key={text} disablePadding>
             <ListItemButton
               sx={{
@@ -137,7 +137,7 @@ export default function Navbar() {
                 href="#"
                 className="block py-2 px-4 text-white hover:text-primary rounded-lg"
               >
-                About
+                Projects
               </a>
             </li>
             <li>

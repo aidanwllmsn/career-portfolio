@@ -1,5 +1,3 @@
-import Cloud from "./Cloud";
-
 const skills = {
   Languages: [
     "JavaScript",

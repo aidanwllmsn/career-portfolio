@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import NavBar from "./components/NavBar";
 import BioCard from "./components/BioCard";
 import Skills from "./components/Skills";
+import Experience from "./components/Experience";
+import Footer from "./components/Footer";
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,7 +24,9 @@ export default function Home() {
         >
           <BioCard />
           <Skills />
+          <Experience />
         </div>
+        <Footer />
       </div>
     </div>
   );
