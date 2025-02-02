@@ -1,8 +1,6 @@
 const Experience = () => {
   return (
     <div className="my-12">
-      <h1 className="text-white text-4xl font-bold">Experience</h1>
-
       <ol className="relative mt-8 border-s border-gray-200">
         <li className="mb-10 ms-4">
           <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white"></div>

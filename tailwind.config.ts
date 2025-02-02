@@ -1,3 +1,4 @@
+import {heroui} from '@heroui/theme';
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -5,9 +6,13 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx}",  // Ensure this includes your app directory
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@heroui/theme/dist/components/tabs.js"
   ],
   theme: {
     extend: {
+      backgroundColor: {
+        DEFAULT: 'var(--background)',
+      },
       colors: {
         mainbackground: 'var(--background)',
         buttonhover: 'var(--buttonhover)',
@@ -21,7 +26,18 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [heroui({
+    prefix: "heroui", // prefix for themes variables
+    defaultTheme: "dark", // default theme from the themes object
+    defaultExtendTheme: "dark", // default theme to extend on custom themes
+    themes: {
+      dark: {
+        layout: {}, // dark theme layout tokens
+        colors: {background: "#111111", secondary: "#111111",}, // dark theme colors
+      },
+    },
+  })],
 };
 
 export default config;
+

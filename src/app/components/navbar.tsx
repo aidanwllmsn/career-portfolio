@@ -21,8 +21,8 @@ export default function Navbar() {
     <Box
       sx={{
         width: "auto",
-        bgcolor: "var(--background)", // Match your background color
-        boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)", // Match your shadow
+        bgcolor: "var(--background)",
+        boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
         fontFamily: "monospace",
       }}
       role="presentation"
