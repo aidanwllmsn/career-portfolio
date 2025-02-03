@@ -1,6 +1,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid2";
+import Image from "next/image";
 import { DockDemo } from "./Dock";
 import DownloadIcon from "@mui/icons-material/Download";
 
@@ -18,10 +19,12 @@ const BioCard = () => {
               justifyContent: "center",
             }}
           >
-            <img
-              src="Portrait.jpg"
+            <Image
+              src="/Portrait.jpg"
               alt="Picture of me"
-              className="w-64 h-64 mx-auto mb-12 rounded-xl overflow-hidden object-cover"
+              width={384}
+              height={384}
+              className="h-96 w-96 md:w-64 md:h-64 mx-auto mb-12 rounded-xl overflow-hidden object-cover" // Tailwind classes
             />
           </Box>
         </Grid>
@@ -80,10 +83,10 @@ const BioCard = () => {
 
       {/* Description Box */}
       <div className="mb-5 text-white text-lg font-sans mt-4">
-        I'm a 23-year-old Full-Stack Web Developer and Software Engineer with
-        over five years of programming experience. I hold a B.S. in Computer
-        Engineering from the University of California, Santa Cruz and specialize
-        in developing professional websites and software solutions.
+        I&apos;m a 23-year-old Full-Stack Web Developer and Software Engineer
+        with over five years of programming experience. I hold a B.S. in
+        Computer Engineering from the University of California, Santa Cruz and
+        specialize in developing professional websites and software solutions.
       </div>
     </Box>
   );

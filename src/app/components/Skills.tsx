@@ -39,8 +39,8 @@ const colors: Record<keyof typeof skills, string> = {
 
 const Skills = () => {
   return (
-    <div className="my-12">
-      <h1 className="text-white text-4xl font-bold">Skills</h1>
+    <div className="my-8">
+      {/* <h1 className="text-white text-4xl font-bold">Skills</h1> */}
       <h1 className="text-white text-2xl my-8 font-bold">Languages</h1>
       <div className="my-8">
         {Object.entries(skills).map(([category, items]) => {

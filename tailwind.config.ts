@@ -6,7 +6,8 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx}",  // Ensure this includes your app directory
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@heroui/theme/dist/components/tabs.js"
+    "./node_modules/@heroui/theme/dist/components/tabs.js",
+    './node_modules/preline/preline.js',
   ],
   theme: {
     extend: {
@@ -36,7 +37,7 @@ const config: Config = {
         colors: {background: "#111111", secondary: "#111111",}, // dark theme colors
       },
     },
-  })],
+  }), require('preline/plugin'),],
 };
 
 export default config;

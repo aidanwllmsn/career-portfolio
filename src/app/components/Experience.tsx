@@ -1,6 +1,6 @@
 const Experience = () => {
   return (
-    <div className="my-12">
+    <div className="my-8">
       <ol className="relative mt-8 border-s border-gray-200">
         <li className="mb-10 ms-4">
           <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white"></div>
@@ -76,7 +76,7 @@ const Experience = () => {
           </time>
           <p className="mb-4 text-base font-normal text-gray-400">
             Developed an AI-driven application using Node.js, React, CSS, and
-            OpenAI API to optimize e-commerce product listings on Rakuten's
+            OpenAI API to optimize e-commerce product listings on Rakuten&apos;s
             platform, improving search visibility and user engagement.
           </p>
         </li>
