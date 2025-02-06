@@ -1,13 +1,15 @@
 "use client";
 
 import { Chip } from "@mui/material";
-import { iconsMap } from "./Icons"; // Ensure correct import path
+import { iconsMap } from "./Icons";
+import Link from "next/link";
 
 interface ProjectCardSmallProps {
   imageSrc: string;
   title: string;
   description: string;
-  icons?: string[]; // Explicitly define the type for icons
+  icons?: string[];
+  link: string;
 }
 
 export function ProjectCardSmall({
@@ -15,12 +17,16 @@ export function ProjectCardSmall({
   title,
   description,
   icons = [],
+  link,
 }: ProjectCardSmallProps) {
   return (
-    <div className="relative w-full border shadow-sm rounded-xl bg-neutral-900 border-neutral-700 shadow-neutral-700/70">
+    <Link
+      href={link} // Set the target path for navigation
+      className="relative w-full border shadow-sm rounded-xl bg-neutral-900 border-neutral-700 shadow-neutral-700/70"
+    >
       {/* Image */}
       <img
-        className="w-full h-full rounded-xl bg-black opacity-20 z-0"
+        className="w-full h-full rounded-xl bg-black opacity-50 z-0 transform transition-transform duration-500 hover:scale-105"
         src={imageSrc}
         alt="Card Image"
       />
@@ -54,8 +60,10 @@ export function ProjectCardSmall({
             })}
           </div>
         )}
-        <p className="mt-1 text-white text-sm">{description}</p>
+        <p className="mt-1 text-neutral-200 font-semibold text-sm">
+          {description}
+        </p>
       </div>
-    </div>
+    </Link>
   );
 }

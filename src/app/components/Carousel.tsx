@@ -8,34 +8,34 @@ const Carousel = () => {
       description:
         "A platform enabling alumni to connect, post, and apply for volunteer opportunities at UC Santa Cruz, using React and Material UI.",
       icons: ["ReactJS", "JavaScript", "TailwindCSS", "Material UI", "AWS"],
+      link: "/",
     },
     {
-      imageSrc:
-        "https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80",
+      imageSrc: "Tenki.png",
       title: "TENKI-JAPAN Keyword Optimizer",
       description:
         "An AI-driven application using OpenAI API to optimize e-commerce listings for Rakuten shops.",
       icons: ["ReactJS", "JavaScript", "HTML/CSS", "MongoDB"],
+      link: "/",
     },
     {
-      imageSrc:
-        "https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80",
+      imageSrc: "ajwphotos.png",
       title: "Photography Portfolio",
       description:
         "A personal professional photography portfolio website for myself.",
       icons: ["ReactJS", "JavaScript", "TypeScript", "TailwindCSS"],
+      link: "/",
     },
     {
-      imageSrc:
-        "https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80",
+      imageSrc: "TNL.png",
       title: "TravelNLuxe Travel Agent Website",
       description:
         "Business website for Travel N Luxe to allow customers to set up an appointment and inquire about services.",
       icons: ["ReactJS", "JavaScript", "HTML/CSS"],
+      link: "/",
     },
     {
-      imageSrc:
-        "https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80",
+      imageSrc: "JC.png",
       title: "Jam Circle",
       description:
         "A web application integrating SpotifyAPI for an enhanced Spotify user experience such as statistics and reviews.",
@@ -48,14 +48,15 @@ const Carousel = () => {
         "Postgres",
         "SQL",
       ],
+      link: "/",
     },
     {
-      imageSrc:
-        "https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80",
+      imageSrc: "LA.jpg",
       title: "Capture LA",
       description:
         "An IOS app for photographers to share photography/photoshoot spots around the Los Angeles area.",
       icons: ["XCode", "Swift"],
+      link: "/",
     },
   ];
 
@@ -78,6 +79,7 @@ const Carousel = () => {
                   title={slide.title}
                   description={slide.description}
                   icons={slide.icons}
+                  link={slide.link}
                 />
               </div>
             </div>
