@@ -10,9 +10,11 @@ import ListItemText from "@mui/material/ListItemText";
 import { TypingAnimation } from "./magicui/typing-animation";
 import DownloadIcon from "@mui/icons-material/Download";
 import Link from "next/link";
+import { useAnimation } from "../context/AnimationContext";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { hasAnimated, markAsAnimated } = useAnimation();
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
@@ -80,12 +82,13 @@ export default function Navbar() {
         </button>
 
         {/* Name Section */}
-        <Link href="/">
+        <Link href="/" onClick={markAsAnimated}>
           <TypingAnimation
             className="top-5 absolute left-1/2 transform -translate-x-1/2 text-2xl font-semibold whitespace-nowrap text-white font-mono md:static md:left-auto md:transform-none"
             duration={100}
             delay={100}
             startOnView={false}
+            key={hasAnimated ? "no-animation" : "with-animation"}
           >
             Aidan Williamson
           </TypingAnimation>
@@ -134,20 +137,20 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                href="/projects"
                 className="block py-2 px-4 text-white hover:text-primary rounded-lg"
               >
                 Projects
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                href="/contact"
                 className="block py-2 px-4 text-white hover:text-primary rounded-lg"
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

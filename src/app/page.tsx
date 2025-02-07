@@ -18,7 +18,6 @@ export default function Home() {
 
   return (
     <div className="px-4 text-lg">
-      <NavBar />
       <div className="max-w-[50rem] mx-auto mt-8">
         <div
           className={`transition-opacity duration-1000 ${
@@ -51,7 +50,6 @@ export default function Home() {
             <Carousel />
           </div>
         </div>
-        <Footer />
       </div>
     </div>
   );
