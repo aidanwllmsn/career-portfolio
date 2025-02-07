@@ -33,19 +33,26 @@ export default function Navbar() {
       onKeyDown={toggleNavbar} // Close the drawer when a key is pressed
     >
       <List>
-        {["Home", "Projects", "Contact"].map((text) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton
-              sx={{
-                textAlign: "center",
-                color: "white",
-                "&:hover": {
-                  color: "var(--primary)",
-                },
-              }}
-            >
-              <ListItemText primary={text} />
-            </ListItemButton>
+        {[
+          { text: "Home", path: "/" },
+          { text: "Projects", path: "/projects" },
+          { text: "Contact", path: "/contact" },
+        ].map((item) => (
+          <ListItem key={item.text} disablePadding>
+            <Link href={item.path} passHref legacyBehavior>
+              <ListItemButton
+                component="a" // Use 'a' as the component for Link
+                sx={{
+                  textAlign: "center",
+                  color: "white",
+                  "&:hover": {
+                    color: "var(--primary)",
+                  },
+                }}
+              >
+                <ListItemText primary={item.text} />
+              </ListItemButton>
+            </Link>
           </ListItem>
         ))}
       </List>

@@ -12,8 +12,15 @@ declare global {
 
 export default function PrelineScript() {
   useEffect(() => {
-    const loadPreline = async () => {
-      // Dynamically load Preline script
+    const loadPreline = () => {
+      if (document.readyState === "complete") {
+        loadScript();
+      } else {
+        window.addEventListener("load", loadScript);
+      }
+    };
+
+    const loadScript = () => {
       const prelineScript = document.createElement("script");
       prelineScript.src =
         "https://cdn.jsdelivr.net/npm/preline@latest/dist/preline.min.js";
@@ -23,22 +30,23 @@ export default function PrelineScript() {
       prelineScript.onload = () => {
         if (typeof window.$hsOverlayCollection === "undefined") {
           window.$hsOverlayCollection = [];
-          console.log("Manually defined $hsOverlayCollection");
         }
 
         if (window.HSStaticMethods) {
-          window.HSStaticMethods.autoInit(["carousel"]);
+          window.HSStaticMethods.autoInit();
         } else {
-          console.error("HSStaticMethods is not defined.");
         }
       };
 
-      prelineScript.onerror = () => {
-        console.error("Failed to load Preline script.");
-      };
+      prelineScript.onerror = () => {};
     };
 
     loadPreline();
+
+    // Cleanup event listener
+    return () => {
+      window.removeEventListener("load", loadScript);
+    };
   }, []);
 
   return null;

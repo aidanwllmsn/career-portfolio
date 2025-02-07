@@ -1,14 +1,43 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { ProjectCard } from "./ProjectCard";
 import { slides } from "./slides";
 
 const Carousel = () => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+
+    // Cleanup function to destroy the carousel on unmount
+    return () => {
+      const carouselElement = document.querySelector("[data-hs-carousel]");
+      if (carouselElement) {
+        // Cast the result to HTMLElement
+        const carouselInstance = window.HSCarousel.getInstance(
+          carouselElement as HTMLElement
+        );
+        if (carouselInstance) {
+          carouselInstance.destroy(); // Destroy the carousel instance
+        }
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isMounted && window.HSCarousel) {
+      window.HSCarousel.autoInit("[data-hs-carousel]"); // Reinitialize the carousel
+    }
+  }, [isMounted]);
+
   return (
     <div
       data-hs-carousel='{
-    "loadingClasses": "opacity-0",
-    "dotsItemClasses": "hs-carousel-active:bg-blue-700 hs-carousel-active:border-blue-700 size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg-blue-500 dark:hs-carousel-active:border-blue-500",
-    "isAutoPlay": true
-  }'
+        "loadingClasses": "opacity-0",
+        "dotsItemClasses": "hs-carousel-active:bg-blue-700 hs-carousel-active:border-blue-700 size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg-blue-500 dark:hs-carousel-active:border-blue-500",
+        "isAutoPlay": true
+      }'
       className="relative"
     >
       <div className="hs-carousel relative overflow-hidden w-full min-h-96 bg-transparent rounded-lg">
