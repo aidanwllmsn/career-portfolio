@@ -12,7 +12,7 @@ interface ProjectCardSmallProps {
   link: string;
 }
 
-export function ProjectCardSmall({
+export function ProjectCard({
   imageSrc,
   title,
   description,
@@ -22,11 +22,11 @@ export function ProjectCardSmall({
   return (
     <Link
       href={link} // Set the target path for navigation
-      className="relative w-full border shadow-sm rounded-xl bg-neutral-900 border-neutral-700 shadow-neutral-700/70"
+      className="relative overflow-hidden w-full border shadow-sm rounded-xl bg-neutral-900 border-neutral-700 shadow-neutral-700/70"
     >
       {/* Image */}
       <img
-        className="w-full h-full rounded-xl bg-black opacity-50 z-0 transform transition-transform duration-500 hover:scale-105"
+        className="w-full h-full rounded-xl bg-black opacity-50 z-0 transform transition-transform duration-500 hover:scale-105 object-cover"
         src={imageSrc}
         alt="Card Image"
       />
