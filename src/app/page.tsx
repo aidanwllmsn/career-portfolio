@@ -1,11 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
-import NavBar from "./components/NavBar";
 import BioCard from "./components/BioCard";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
-import Footer from "./components/Footer";
 import Carousel from "./components/Carousel";
 import { Tabs, Tab } from "@heroui/tabs";
 

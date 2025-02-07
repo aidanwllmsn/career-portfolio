@@ -4,7 +4,7 @@ import { Chip } from "@mui/material";
 import { iconsMap } from "./Icons";
 import Link from "next/link";
 
-interface ProjectCardSmallProps {
+interface ProjectCardProps {
   imageSrc: string;
   title: string;
   description: string;
@@ -18,7 +18,7 @@ export function ProjectCard({
   description,
   icons = [],
   link,
-}: ProjectCardSmallProps) {
+}: ProjectCardProps) {
   return (
     <Link
       href={link} // Set the target path for navigation
