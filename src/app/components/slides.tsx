@@ -5,7 +5,7 @@ export const slides = [
     description:
       "A platform enabling alumni to connect, post, and apply for volunteer opportunities at UC Santa Cruz, using React and Material UI.",
     icons: ["ReactJS", "JavaScript", "TailwindCSS", "Material UI", "AWS"],
-    link: "/",
+    link: "https://slugmatch.app/",
   },
   {
     imageSrc: "Tenki.png",
@@ -21,7 +21,7 @@ export const slides = [
     description:
       "A personal professional photography portfolio website for myself.",
     icons: ["ReactJS", "JavaScript", "TypeScript", "TailwindCSS"],
-    link: "/",
+    link: "https://ajwphotography.com/t",
   },
   {
     imageSrc: "TNL.png",
@@ -29,7 +29,7 @@ export const slides = [
     description:
       "Business website for Travel N Luxe to allow customers to set up an appointment and inquire about services.",
     icons: ["ReactJS", "JavaScript", "HTML/CSS"],
-    link: "/",
+    link: "https://travelnluxe.com/",
   },
   {
     imageSrc: "JC.png",
@@ -45,7 +45,7 @@ export const slides = [
       "Postgres",
       "SQL",
     ],
-    link: "/",
+    link: "https://github.com/Namebrand71/JamCircleDevs",
   },
   {
     imageSrc: "LA.jpg",
@@ -53,6 +53,6 @@ export const slides = [
     description:
       "An IOS app for photographers to share photography/photoshoot spots around the Los Angeles area.",
     icons: ["XCode", "Swift"],
-    link: "/",
+    link: "https://github.com/aidanwllmsn/CaptureLA",
   },
 ];

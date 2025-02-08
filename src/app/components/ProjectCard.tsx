@@ -2,7 +2,6 @@
 
 import { Chip } from "@mui/material";
 import { iconsMap } from "./Icons";
-import Link from "next/link";
 
 interface ProjectCardProps {
   imageSrc: string;
@@ -20,8 +19,10 @@ export function ProjectCard({
   link,
 }: ProjectCardProps) {
   return (
-    <Link
-      href={link} // Set the target path for navigation
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
       className="relative overflow-hidden w-full border shadow-sm rounded-xl bg-neutral-900 border-neutral-700 shadow-neutral-700/70"
     >
       {/* Image */}
@@ -82,6 +83,6 @@ export function ProjectCard({
           {description}
         </p>
       </div>
-    </Link>
+    </a>
   );
 }
