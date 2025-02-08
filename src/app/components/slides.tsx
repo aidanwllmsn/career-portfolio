@@ -21,7 +21,7 @@ export const slides = [
     description:
       "A personal professional photography portfolio website for myself.",
     icons: ["ReactJS", "JavaScript", "TypeScript", "TailwindCSS"],
-    link: "https://ajwphotography.com/t",
+    link: "https://ajwphotography.com/",
   },
   {
     imageSrc: "TNL.png",
