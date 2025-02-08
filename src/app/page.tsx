@@ -11,7 +11,7 @@ export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true); // This will trigger the fade-in
+    setIsVisible(true);
   }, []);
 
   return (

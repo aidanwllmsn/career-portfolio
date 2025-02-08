@@ -33,7 +33,9 @@ export function ProjectCard({
 
       {/* Text Content */}
       <div className="absolute bottom-0 start-0 end-0 p-4 md:p-5">
-        <h3 className="text-3xl font-bold text-white">{title}</h3>
+        <h3 className="text-xl md:text-3xl font-semibold md:font-bold text-white">
+          {title}
+        </h3>
         {/* Icons Row */}
         {icons.length > 0 && ( // Only render if icons exist
           <div className="flex flex-wrap gap-2 mt-3">
@@ -45,7 +47,7 @@ export function ProjectCard({
               return (
                 <Chip
                   key={skill}
-                  icon={<SkillIcon style={{ fontSize: 20 }} />} // Ensure correct rendering
+                  icon={<SkillIcon />}
                   label={skill}
                   sx={{
                     backgroundColor: "#27272a",
@@ -53,6 +55,22 @@ export function ProjectCard({
                     border: "1px solid #3b3b3f",
                     "& .MuiChip-icon": {
                       color: "white",
+                      fontSize: {
+                        xs: 10,
+                        md: 20,
+                      },
+                    },
+                    fontSize: {
+                      xs: 10,
+                      md: 15,
+                    },
+                    padding: {
+                      xs: "0px",
+                      md: "4px",
+                    },
+                    height: {
+                      xs: 24,
+                      md: 32,
                     },
                   }}
                 />
@@ -60,7 +78,7 @@ export function ProjectCard({
             })}
           </div>
         )}
-        <p className="mt-1 text-neutral-200 font-semibold text-sm">
+        <p className="mt-1 text-neutral-200 font-normal md:font-semibold text-xs md:text-sm">
           {description}
         </p>
       </div>

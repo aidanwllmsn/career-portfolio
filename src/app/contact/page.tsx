@@ -22,7 +22,7 @@ export default function Contact() {
             </p>
             <div className="flex md:space-x-20 justify-center mt-8">
               {/* LinkedIn */}
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center pr-4">
                 <a
                   href="https://www.linkedin.com/in/your-username"
                   target="_blank"
@@ -44,13 +44,13 @@ export default function Contact() {
                 <span className="text-white text-lg font-bold font-lg mt-2">
                   LinkedIn
                 </span>
-                <span className="text-neutral-400 text-base font-lg mt-2">
+                <span className="text-neutral-400 text-xs md:text-medium mt-2">
                   aidan-williamson
                 </span>
               </div>
 
               {/* Email */}
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center px-4">
                 <a href="mailto:ajwill1022@gmail.com">
                   <svg
                     data-name="1-Email"
@@ -67,13 +67,13 @@ export default function Contact() {
                 <span className="text-white text-lg font-bold font-lg mt-2">
                   Email
                 </span>
-                <span className="text-neutral-400 text-base font-lg mt-2">
+                <span className="text-neutral-400 text-xs md:text-medium mt-2">
                   ajwill1022@gmail.com
                 </span>
               </div>
 
               {/* Instagram */}
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center pl-4">
                 <a
                   href="https://www.instagram.com/aj_wllmsn"
                   target="_blank"
@@ -117,7 +117,7 @@ export default function Contact() {
                 <span className="text-white text-lg font-bold font-lg mt-2">
                   Instagram
                 </span>
-                <span className="text-neutral-400 text-base font-lg mt-2">
+                <span className="text-neutral-400 text-xs md:text-medium mt-2">
                   aj_wllmsn
                 </span>
               </div>
