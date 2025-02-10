@@ -41,7 +41,7 @@ export default function Navbar() {
           <ListItem key={item.text} disablePadding>
             <Link href={item.path} passHref legacyBehavior>
               <ListItemButton
-                component="a" // Use 'a' as the component for Link
+                component="a"
                 sx={{
                   textAlign: "center",
                   color: "white",
