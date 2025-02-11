@@ -51,6 +51,7 @@ const Carousel = () => {
                   description={slide.description}
                   icons={slide.icons}
                   link={slide.link}
+                  slug={slide.slug}
                 />
               </div>
             </div>
