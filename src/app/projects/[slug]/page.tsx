@@ -75,7 +75,9 @@ export default function ProjectPage({
             })}
           </div>
         )}
+        <p className="text-2xl font-bold mb-4">About This Project:</p>
         <p className="text-lg mb-8">{project.longDescription}</p>
+
         {/* Render the button only if project.link is not empty */}
         {project.link && (
           <a
